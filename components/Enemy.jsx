@@ -17,19 +17,17 @@ function Enemy() {
 
   const getN = async () => {
     audioRef.current.play();
-    
-    const newN = 2 + n + 16 * (P - 1);
-    setN(newN); // 非同步更新狀態，但我們用 newN 處理邏輯
-    
-     const li = ["A" + newN, "B" + newN, "C" + newN,"D" + newN, "E" + newN, "F" + newN,"G" + newN, "H" + newN, "I" + newN, "J" + newN];
+    setN(2 + n + 16 * (P - 1));
+    const NewN = N + 2 + n + 16 * (P - 1)
+    let li = ["A" + NewN, "B" + NewN, "C" + NewN, "D" + NewN, "E" + NewN, "F" + NewN, "G" + NewN, "H" + NewN, "I" + NewN, "J" + NewN];
     const jsonLi = encodeURIComponent(JSON.stringify(li));
     try {
-      const response = await axios.post(`/api/todos?id=${jsonLi}`);
+      const response = await axios.post(/api/todos?id=${jsonLi});
       setRight(response.data);
     } catch (error) {
       console.error("API Error:", error);
     }
-  };
+  }
 
   const Li = () => {
     const a = [780, 280];
