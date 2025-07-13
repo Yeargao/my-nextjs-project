@@ -18,7 +18,7 @@ function Enemy() {
   const getN = async (n) => {
     audioRef.current.play();
     setN(2 + n + 16 * (P - 1));
-    const NewN = N + 2 + n + 16 * (P - 1)
+    const NewN = 2 + n + 16 * (P - 1)
     let li = ["A" + NewN, "B" + NewN, "C" + NewN, "D" + NewN, "E" + NewN, "F" + NewN, "G" + NewN, "H" + NewN, "I" + NewN, "J" + NewN];
     const jsonLi = encodeURIComponent(JSON.stringify(li));
     try {
