@@ -15,10 +15,13 @@ function Enemy() {
     }
   };
 
-  const getN = async (n) => {
+  const getN = async () => {
     audioRef.current.play();
-    setN(2 + n + 16 * (P - 1));
-    let li = ["A" + N, "B" + N, "C" + N, "D" + N, "E" + N, "F" + N, "G" + N, "H" + N, "I" + N, "J" + N];
+    
+    const newN = 2 + n + 16 * (P - 1);
+    setN(newN); // 非同步更新狀態，但我們用 newN 處理邏輯
+    
+     const li = ["A" + newN, "B" + newN, "C" + newN,"D" + newN, "E" + newN, "F" + newN,"G" + newN, "H" + newN, "I" + newN, "J" + newN];
     const jsonLi = encodeURIComponent(JSON.stringify(li));
     try {
       const response = await axios.post(`/api/todos?id=${jsonLi}`);
