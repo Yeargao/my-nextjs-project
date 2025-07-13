@@ -18,7 +18,8 @@ function Enemy() {
 const getN = async (n) => {
     audioRef.current.play();
     setN(2 + n + 16 * (P - 1));
-    let li = ["A" + N, "B" + N, "C" + N, "D" + N, "E" + N, "F" + N, "G" + N, "H" + N, "I" + N, "J" + N];
+    const NewN = 2 + n + 16 * (P - 1);
+    let li = ["A" + NewN, "B" + NewN, "C" + NewN, "D" + NewN, "E" + NewN, "F" + NewN, "G" + NewN, "H" + NewN, "I" + NewN, "J" + NewN];
     const jsonLi = encodeURIComponent(JSON.stringify(li));
     try {
       const response = await axios.post(`/api/todos?id=${jsonLi}`);
