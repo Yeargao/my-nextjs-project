@@ -35,7 +35,7 @@ const getN = async (n) => {
       <ul style={{ listStyleType: "none" }}>
         {Array.from({ length: 4 }, (_, i) =>
           Array.from({ length: 2 }, (_, j) => (
-            <li key={2 * i + j} style={{ fontSize: '16px', position: "absolute", left: `${a[0] + 240 * j}px`, top: `${a[1] + 65 * i}px` }}>
+            <li key={2 * i + j} style={{ position: "absolute", left: `${a[0] + 240 * j}px`, top: `${a[1] + 65 * i}px` }}>
               {right[2 * i + j]}
             </li>
           ))
