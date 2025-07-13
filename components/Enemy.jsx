@@ -15,7 +15,7 @@ function Enemy() {
     }
   };
 
-  const getN = async  => {
+  const getN = async (n) => {
     audioRef.current.play();
     setN(2 + n + 16 * (P - 1));
     let li = ["A" + N, "B" + N, "C" + N, "D" + N, "E" + N, "F" + N, "G" + N, "H" + N, "I" + N, "J" + N];
