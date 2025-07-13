@@ -15,13 +15,13 @@ function Enemy() {
     }
   };
 
-  const getN = async (n) => {
+const getN = async (n) => {
     audioRef.current.play();
     setN(2 + n + 16 * (P - 1));
     let li = ["A" + N, "B" + N, "C" + N, "D" + N, "E" + N, "F" + N, "G" + N, "H" + N, "I" + N, "J" + N];
     const jsonLi = encodeURIComponent(JSON.stringify(li));
     try {
-      const response = await axios.post(/api/todos?id=${jsonLi});
+      const response = await axios.post(`/api/todos?id=${jsonLi}`);
       setRight(response.data);
     } catch (error) {
       console.error("API Error:", error);
