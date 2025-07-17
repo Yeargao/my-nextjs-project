@@ -81,7 +81,7 @@ function Enemy() {
       <img src={`images/4-${N - 2}.webp`} width='130px' height='130px' style={{ position: 'absolute', left: '890px', top: '60px' }} />
       <form>
         <input type="text" placeholder="輸入" value={Com} onChange={(e) => setCom(e.target.value)} style={{ position: "absolute", left: '780px', top: '540px' }} />
-        <button style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
+        <button type="submit" style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
       </form>
     </div>
   )
