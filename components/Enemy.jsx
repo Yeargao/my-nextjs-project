@@ -6,7 +6,7 @@ function Enemy() {
   const [N, setN] = useState(3);
   const [P, setP] = useState(1);
   const audioRef = useRef(null);
-  const [Com, setCom] = useState([])
+  const [Com, setCom] = useState([]);
 
   const getP = async (p) => {
     audioRef.current.play();
