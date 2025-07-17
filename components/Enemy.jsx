@@ -6,6 +6,7 @@ function Enemy() {
   const [N, setN] = useState(3);
   const [P, setP] = useState(1);
   const audioRef = useRef(null);
+  const [Com, setCom] = useState([])
 
   const getP = async (p) => {
     audioRef.current.play();
@@ -15,7 +16,7 @@ function Enemy() {
     }
   };
 
-const getN = async (n) => {
+  const getN = async (n) => {
     audioRef.current.play();
     setN(2 + n + 16 * (P - 1));
     const NewN = 2 + n + 16 * (P - 1);
@@ -61,29 +62,27 @@ const getN = async (n) => {
 
   return (
     <div style={{ whiteSpace: 'nowrap' }}>
-        <img src='images/back.png' style={{ position: 'absolute', width: '1400px', height: '670px', left: '0px', top: '0px', right: '0px', bottom: '0px' }} />
-        <button onClick={() => setMB(false)}> <img src='images/goback.png' width='180px' height='180px' style={{ background: 'none', border: 'none', position: 'absolute', left: '1030px', top: '0px' }} /></button >
-        <div style={{ color: 'brown' }}>
-            <h3 style={{ position: 'absolute', left: '880px', top: '170px', textAlign: 'center', fontSize: '35px' }}>{right[0]}</h3>
-            <h3 style={{ position: 'absolute', left: '405px', top: '480px', fontSize: '60px' }}>{P}/8</h3>
-            <h3 style={{ position: 'absolute', left: '385px', top: '-30px', fontSize: '60px' }}>敵人</h3>
-            <Li />
-        </div>
-        <audio ref={audioRef} src="./images/大聲.mp3" />
-        <Bu />
-        <button onClick={() => getP(1)} style={{ background: 'none', border: 'none', position: 'absolute', left: '500px', top: '540px', opacity: '1' }}>
-            <img src='images/right.png' width='110px' height='67px' />
-        </button>
-        <button onClick={() => getP(-1)} style={{ background: 'none', border: 'none', position: 'absolute', left: '265px', top: '540px', opacity: '1' }}>
-            <img src='images/left.png' width='110px' height='67px' />
-        </button>
-        <img src={`images/4-${N - 2}.webp`} width='130px' height='130px' style={{ position: 'absolute', left: '890px', top: '60px' }} />
-        <form className='Com'>
-      <input type="text" placeholder='輸入' value={ComIn} onChange={(e) => setComIn(e.target.value)} style={{ position: "absolute", left: '780px', top: '540px' }}/>
-      <button type="submit" style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
-    </form>
+      <img src='images/back.png' style={{ position: 'absolute', width: '1400px', height: '670px', left: '0px', top: '0px', right: '0px', bottom: '0px' }} />
+      <button onClick={() => setMB(false)}> <img src='images/goback.png' width='180px' height='180px' style={{ background: 'none', border: 'none', position: 'absolute', left: '1030px', top: '0px' }} /></button >
+      <div style={{ color: 'brown' }}>
+        <h3 style={{ position: 'absolute', left: '880px', top: '170px', textAlign: 'center', fontSize: '35px' }}>{right[0]}</h3>
+        <h3 style={{ position: 'absolute', left: '405px', top: '480px', fontSize: '60px' }}>{P}/8</h3>
+        <h3 style={{ position: 'absolute', left: '385px', top: '-30px', fontSize: '60px' }}>敵人</h3>
+        <Li />
+      </div>
+      <audio ref={audioRef} src="./images/大聲.mp3" />
+      <Bu />
+      <button onClick={() => getP(1)} style={{ background: 'none', border: 'none', position: 'absolute', left: '500px', top: '540px', opacity: '1' }}>
+        <img src='images/right.png' width='110px' height='67px' />
+      </button>
+      <button onClick={() => getP(-1)} style={{ background: 'none', border: 'none', position: 'absolute', left: '265px', top: '540px', opacity: '1' }}>
+        <img src='images/left.png' width='110px' height='67px' />
+      </button>
+      <img src={`images/4-${N - 2}.webp`} width='130px' height='130px' style={{ position: 'absolute', left: '890px', top: '60px' }} />
+      <input type="text" placeholder='輸入' value={Com} onChange={(e) => setCom(e.target.value)} style={{ position: "absolute", left: '780px', top: '540px' }} />
+      <button style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
     </div>
-)
+  )
 }
 
 export default Enemy
