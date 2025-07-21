@@ -79,6 +79,7 @@ function Enemy() {
         <img src='images/left.png' width='110px' height='67px' />
       </button>
       <img src={`images/4-${N - 2}.webp`} width='130px' height='130px' style={{ position: 'absolute', left: '890px', top: '60px' }} />
+      <Comment />
     </div>
   )
 }
