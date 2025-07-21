@@ -20,7 +20,7 @@ const [Com, setCom] = useState([
       <button type="submit" style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
     </form>
       <ul style={{ listStyleType: "none" }}>
-        <li style={{ position: "absolute", left: '780px', top: '600px' }}>{Com[0]}</li>
+        <li style={{ position: "absolute", left: '780px', top: '600px' }}>{Com}</li>
       </ul>
     </div>
   )
