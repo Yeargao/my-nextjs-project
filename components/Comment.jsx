@@ -9,7 +9,7 @@ const [Com, setCom] = useState([
 
   const addCom=(content)=>{
     content.preventDefault()
-    setCom(...Com),{content,id: Math.random()}
+    setCom(...Com,{content,id: Math.random()})
     setContent('')
   }
 
