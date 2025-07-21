@@ -14,13 +14,15 @@ const [Com, setCom] = useState([
   }
 
   return (
+   <div>
     <form className="rightDown" onSubmit={addCom}>
       <input type="text" placeholder="輸入" value={content} onChange={(e) => { setContent(e.target.value) }} style={{ position: "absolute", left: '780px', top: '540px' }} />
       <button type="submit" style={{ position: "absolute", left: '1020px', top: '540px' }}>加入</button>
+    </form>
       <ul style={{ listStyleType: "none" }}>
         <li style={{ position: "absolute", left: '780px', top: '600px' }}>{Com[0]}</li>
       </ul>
-    </form>
+    </div>
   )
 }
  
