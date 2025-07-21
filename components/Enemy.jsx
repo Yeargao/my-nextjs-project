@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import axios from "axios";
-import Comment from "./Comment";
 
 function Enemy() {
   const [right, setRight] = useState([]);
